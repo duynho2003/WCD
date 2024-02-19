@@ -18,7 +18,7 @@ import java.sql.SQLException;
  */
 public class DbConnector {
     static final String jdbcUrl = "jdbc:mysql://localhost:3306/sem4wcd2208A?useSSL=false";
-    static final String jdbcUsername = "approot";
+    static final String jdbcUsername = "root";
     static final String jdbcPassword = "123456";
     
     //JDBC

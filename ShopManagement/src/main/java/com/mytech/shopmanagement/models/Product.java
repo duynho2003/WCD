@@ -34,7 +34,14 @@ public class Product implements Serializable {
     
     @Column(name = "price")
     private Double price;
+    
+    public Product(){}
 
+    public Product(String name, Double price) {
+        this.name = name;
+        this.price = price;
+    }
+    
     public Long getId() {
         return id;
     }

@@ -18,6 +18,16 @@ import java.util.List;
  */
 public class ProductDao {
     
+    public void addProduct(Product product) {
+        EntityManager entityManager  = DbConnector.getEntityManager();
+        
+        try {
+            entityManager.persist(product);
+        } catch (Exception e){
+            
+        }
+    }
+    
     public List<Product> getProduct() {
         List<Product> listProduct = new ArrayList<>();
         
