@@ -1,0 +1,4 @@
+com\mycompany\helloattributes\resources\JakartaEE10Resource.class
+com\mycompany\helloattributes\JakartaRestConfiguration.class
+com\mycompany\helloattributes\NextServlet.class
+com\mycompany\helloattributes\HomeServlet.class

@@ -1,0 +1,7 @@
+com\mycompany\usermanagement\controllers\LoginServlet.class
+com\mycompany\usermanagement\controllers\UserServlet.class
+com\mycompany\usermanagement\helpers\ServletHelper.class
+com\mycompany\usermanagement\JakartaRestConfiguration.class
+com\mycompany\usermanagement\controllers\HomeServlet.class
+com\mycompany\usermanagement\models\User.class
+com\mycompany\usermanagement\resources\JakartaEE10Resource.class

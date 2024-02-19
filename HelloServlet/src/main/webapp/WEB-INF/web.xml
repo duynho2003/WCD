@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <context-param>
+        <param-name>dbname</param-name>
+        <param-value>com.mysql.cj.jbdbc.Driver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>username</param-name>
+        <param-value>admin</param-value>
+    </context-param>
+    <context-param>
+        <param-name>password</param-name>
+        <param-value>123456</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>GreetingServlet</servlet-name>
+        <servlet-class>com.mycompany.helloservlet.controllers.GreetingServlet</servlet-class>
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>FPTAptech</param-value>
+        </init-param>
+        <init-param>
+            <param-name>course</param-name>
+            <param-value>Java Web Development</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GreetingServlet</servlet-name>
+        <url-pattern>/greeting</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
