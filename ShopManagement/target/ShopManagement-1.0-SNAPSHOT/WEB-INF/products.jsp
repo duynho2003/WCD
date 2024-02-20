@@ -1,10 +1,12 @@
 <%-- 
-    Document   : products
-    Created on : Feb 19, 2024, 4:11:08 PM
-    Author     : Admin
+    Document   : customers
+    Created on : Jan 31, 2024, 2:31:05 PM
+    Author     : trungtruong
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="jakarta.tags.core" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,7 +21,7 @@
     <body>
         <div class="container">
             <h1>PRODUCTS MANAGEMENT!</h1>
-            <h2><a href="products/new">New Product</a></h2>
+            <h2><a href="products/new">New Customer</a></h2>
             <nav class="navbar navbar-light bg-light">
                 <form class="form-inline d-flex" action="${pageContext.request.contextPath}/products/search" method="get">
                     <input class="form-control mx-2" type="search" name="searchText"
@@ -40,10 +42,10 @@
                         <td><c:out value="${product.id}"></c:out></td>
                         <td><c:out value="${product.name}"></c:out></td>
                         <td><c:out value="${product.price}"></c:out></td>
-                        <td><c:out value="${product.image}"></c:out></td>
+                        <td><img src="https://carshop.vn/wp-content/uploads/2022/07/hinh-sieu-xe-32.jpg" class='img-thumbnail' width='100' /></td>
                             <td>
-                                <a href="${pageContext.request.contextPath}/products/edit?id=<c:out value='${product.id}'/>">Edit</a> 
-                            <a href="${pageContext.request.contextPath}/products/delete?id=<c:out value='${product.id}'/>">Delete</a>
+                                <a href="${pageContext.request.contextPath}/customers/edit?id=<c:out value='${customer.id}'/>">Edit</a> 
+                            <a href="${pageContext.request.contextPath}/customers/delete?id=<c:out value='${customer.id}'/>">Delete</a>
                     </tr>
                 </c:forEach>
             </table>

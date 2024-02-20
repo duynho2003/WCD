@@ -21,9 +21,9 @@
     <body>
         <div class="container">
             <h1>NEW PRODUCT!</h1>
-            <h2><a href="products">Back to Product list</a></h2>
+            <h2><a href="products">Back to Customers list</a></h2>
 
-            <form action="${pageContext.request.contextPath}/products/save" method="post">
+            <form action="${pageContext.request.contextPath}/customers/save" method="post">
                 <table class="table">
                     <tr>
                         <th>Product name:</th>
@@ -32,7 +32,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>Price:</th>
+                        <th>Product price:</th>
                         <td>
                             <input type="number" name="price"/>
                         </td>
@@ -40,7 +40,7 @@
                     <tr>
                         <th>Image</th>
                         <td>
-                            <input type="file" id="img" accept="image/png,image/jpeg">
+                            <<input type="file" id="img" accept="image/png,image/jpeg">
                         </td>
                     </tr>
                     <tr>

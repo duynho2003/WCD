@@ -19,11 +19,12 @@ import java.util.List;
 public class ProductDao {
     
     public void addProduct(Product product) {
-        EntityManager entityManager  = DbConnector.getEntityManager();
+        EntityManager entityManager = DbConnector.getEntityManager();
         
-        try {
+        try{
             entityManager.persist(product);
-        } catch (Exception e){
+            
+        }catch(Exception e){
             
         }
     }

@@ -23,7 +23,7 @@ public class Product implements Serializable {
     private static final long serialVersionUID = 1L;
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @Column(name = "name", unique = true, length = 255, nullable = false)
@@ -41,7 +41,7 @@ public class Product implements Serializable {
         this.name = name;
         this.price = price;
     }
-    
+
     public Long getId() {
         return id;
     }
