@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Customers</title>
+        <title>Products</title>
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -21,7 +21,7 @@
     <body>
         <div class="container">
             <h1>PRODUCTS MANAGEMENT!</h1>
-            <h2><a href="products/new">New Customer</a></h2>
+            <h2><a href="products/new">New Products</a></h2>
             <nav class="navbar navbar-light bg-light">
                 <form class="form-inline d-flex" action="${pageContext.request.contextPath}/products/search" method="get">
                     <input class="form-control mx-2" type="search" name="searchText"
@@ -42,10 +42,10 @@
                         <td><c:out value="${product.id}"></c:out></td>
                         <td><c:out value="${product.name}"></c:out></td>
                         <td><c:out value="${product.price}"></c:out></td>
-                        <td><img src="https://carshop.vn/wp-content/uploads/2022/07/hinh-sieu-xe-32.jpg" class='img-thumbnail' width='100' /></td>
+                        <td><img src="${pageContext.request.contextPath}/${product.image}" class='img-thumbnail' width='100' /></td>
                             <td>
-                                <a href="${pageContext.request.contextPath}/customers/edit?id=<c:out value='${customer.id}'/>">Edit</a> 
-                            <a href="${pageContext.request.contextPath}/customers/delete?id=<c:out value='${customer.id}'/>">Delete</a>
+                                <a href="${pageContext.request.contextPath}/products/edit?id=<c:out value='${product.id}'/>">Edit</a> 
+                            <a href="${pageContext.request.contextPath}/products/delete?id=<c:out value='${product.id}'/>">Delete</a>
                     </tr>
                 </c:forEach>
             </table>

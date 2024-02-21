@@ -48,6 +48,18 @@ public class ProductDao {
         }
     }
     
+    public void deleteProduct(Long id){
+        try{
+            EntityManager entityManager = DbConnector.getEntityManager();
+            entityManager.getTransaction().begin();
+            Product product = entityManager.find(Product.class, id);
+            System.out.println("Product delete By ID: " + product.getName());
+            entityManager.remove(product);
+            entityManager.getTransaction().commit();
+        } catch (Exception e) {
+        }
+    }
+    
     public Product getProductById(Long id) {
         Product product = null;
 
