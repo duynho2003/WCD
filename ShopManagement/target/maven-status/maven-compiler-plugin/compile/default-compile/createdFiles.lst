@@ -1,4 +1,5 @@
 com\mytech\shopmanagement\controllers\ProductServlet.class
+com\mytech\shopmanagement\helpers\Constants.class
 com\mytech\shopmanagement\db\DbConnector.class
 com\mytech\shopmanagement\JakartaRestConfiguration.class
 com\mytech\shopmanagement\models\Product.class

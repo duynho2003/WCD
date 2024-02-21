@@ -21,9 +21,9 @@
     <body>
         <div class="container">
             <h1>NEW PRODUCT!</h1>
-            <h2><a href="products">Back to Customers list</a></h2>
+            <h2><a href="products">Back to Products list</a></h2>
 
-            <form action="${pageContext.request.contextPath}/customers/save" method="post">
+            <form action="${pageContext.request.contextPath}/products/save" method="post" enctype="multipart/form-data">
                 <table class="table">
                     <tr>
                         <th>Product name:</th>
@@ -40,7 +40,7 @@
                     <tr>
                         <th>Image</th>
                         <td>
-                            <<input type="file" id="img" accept="image/png,image/jpeg">
+                            <input type="file" name="image" id="img" accept="image/png,image/jpeg">
                         </td>
                     </tr>
                     <tr>
