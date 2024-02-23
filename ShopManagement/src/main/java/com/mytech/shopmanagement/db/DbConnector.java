@@ -36,10 +36,11 @@ public class DbConnector {
     
     //JPA
     @PersistenceUnit
-    private static EntityManagerFactory entityManagerFactory = 
+    private static final EntityManagerFactory entityManagerFactory = 
             Persistence.createEntityManagerFactory("ShopManagement");
     
     public static EntityManager getEntityManager() {
+        System.out.println("why very show with monitor......");
         return DbConnector.entityManagerFactory.createEntityManager();
     }
 }

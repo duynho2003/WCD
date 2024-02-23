@@ -10,6 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 
 /**
@@ -18,6 +19,8 @@ import jakarta.persistence.Table;
  */
 @Entity
 @Table(name = "Products")
+@NamedQuery(name = "Product.findByName", query = "SELECT p FROM Product p WHERE p.name LIKE :name")
+@NamedQuery(name = "Product.findAll",  query = "SELECT p FROM Product p")
 public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -42,7 +45,7 @@ public class Product implements Serializable {
         this.name = name;
         this.price = price;
     }
-    
+
     public Product(String name, Double price) {
         this.name = name;
         this.price = price;
@@ -79,8 +82,6 @@ public class Product implements Serializable {
     public void setPrice(Double price) {
         this.price = price;
     }
-    
-    
 
     @Override
     public int hashCode() {

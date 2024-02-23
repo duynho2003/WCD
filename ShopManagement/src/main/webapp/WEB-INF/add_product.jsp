@@ -21,7 +21,7 @@
     <body>
         <div class="container">
             <h1>NEW PRODUCT!</h1>
-            <h2><a href="products">Back to Products list</a></h2>
+            <h2><a href="products">Back to Customers list</a></h2>
 
             <form action="${pageContext.request.contextPath}/products/save" method="post" enctype="multipart/form-data">
                 <table class="table">
@@ -32,7 +32,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>Product price:</th>
+                        <th>Price:</th>
                         <td>
                             <input type="number" name="price"/>
                         </td>

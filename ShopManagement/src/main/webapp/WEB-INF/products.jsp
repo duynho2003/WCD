@@ -1,5 +1,5 @@
 <%-- 
-    Document   : customers
+    Document   : prodcuts
     Created on : Jan 31, 2024, 2:31:05 PM
     Author     : trungtruong
 --%>
@@ -21,7 +21,7 @@
     <body>
         <div class="container">
             <h1>PRODUCTS MANAGEMENT!</h1>
-            <h2><a href="products/new">New Products</a></h2>
+            <h2><a href="products/new">New Product</a></h2>
             <nav class="navbar navbar-light bg-light">
                 <form class="form-inline d-flex" action="${pageContext.request.contextPath}/products/search" method="get">
                     <input class="form-control mx-2" type="search" name="searchText"
@@ -42,9 +42,9 @@
                         <td><c:out value="${product.id}"></c:out></td>
                         <td><c:out value="${product.name}"></c:out></td>
                         <td><c:out value="${product.price}"></c:out></td>
-                        <td><img src="${pageContext.request.contextPath}/${product.image}" class='img-thumbnail' width='100' /></td>
-                            <td>
-                                <a href="${pageContext.request.contextPath}/products/edit?id=<c:out value='${product.id}'/>">Edit</a> 
+                        <td><img src="${pageContext.request.contextPath}/${product.image}" width="200" height="300" alt="product image"/></td>
+                        <td>
+                            <a href="${pageContext.request.contextPath}/products/edit?id=<c:out value='${product.id}'/>">Edit</a> 
                             <a href="${pageContext.request.contextPath}/products/delete?id=<c:out value='${product.id}'/>">Delete</a>
                     </tr>
                 </c:forEach>
