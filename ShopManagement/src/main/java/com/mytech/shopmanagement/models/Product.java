@@ -20,6 +20,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "Products")
 @NamedQuery(name = "Product.findByName", query = "SELECT p FROM Product p WHERE p.name LIKE :name")
+@NamedQuery(name = "Product.findByPrice", query = "SELECT p FROM Product p WHERE p.price LIKE :price")
 @NamedQuery(name = "Product.findAll",  query = "SELECT p FROM Product p")
 public class Product implements Serializable {
 

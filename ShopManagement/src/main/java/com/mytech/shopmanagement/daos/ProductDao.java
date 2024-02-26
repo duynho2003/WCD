@@ -21,19 +21,19 @@ public class ProductDao {
     public void addProduct(Product product) {
         EntityManager entityManager = DbConnector.getEntityManager();
         
-        try{
+        try {
             var transaction = entityManager.getTransaction();
             transaction.begin();
             entityManager.persist(product);
             transaction.commit();
-        }catch(Exception e){
+        } catch (Exception e) {
         }
     }
     
     public void updateProduct(Product product) {
         EntityManager entityManager = DbConnector.getEntityManager();
         
-        try{
+        try {
             var transaction = entityManager.getTransaction();
             transaction.begin();
             Product dbProduct = entityManager.find(Product.class, product.getId());
@@ -44,16 +44,16 @@ public class ProductDao {
             }
             entityManager.persist(dbProduct);
             transaction.commit();
-        }catch(Exception e){
+        } catch (Exception e) {
         }
     }
     
-    public void deleteProduct(Long id){
-        try{
+    public void deleteProduct(Long id) {
+        try {
             EntityManager entityManager = DbConnector.getEntityManager();
             entityManager.getTransaction().begin();
             Product product = entityManager.find(Product.class, id);
-            System.out.println("Product delete By ID: " + product.getName());
+            System.out.println("Product delete ID: " + product.getName());
             entityManager.remove(product);
             entityManager.getTransaction().commit();
         } catch (Exception e) {
@@ -62,16 +62,44 @@ public class ProductDao {
     
     public Product getProductById(Long id) {
         Product product = null;
-
-        try{
+        
+        try {
             EntityManager entityManager = DbConnector.getEntityManager();
-            product = entityManager.find(Product.class, product);
-
+            product = entityManager.find(Product.class, id);
+            
             System.out.println("Product By ID: " + product.getName());
         } catch (Exception e) {
         }
-
+        
         return product;
+    }
+    
+    public List<Product> searchProductsByName(String name){
+        List<Product> listProduct = new ArrayList<>();
+        try{
+            EntityManager entityManager = DbConnector.getEntityManager();
+            TypedQuery<Product> query = 
+                    entityManager.createNamedQuery("Product.findByName", Product.class);
+            query.setParameter("name", "%" + name + "%");
+            listProduct = query.getResultList();
+        } catch (Exception e){
+            System.out.println("searchProductsByName Exception: " + e.getMessage());
+        }
+        return listProduct;
+    }
+
+    public List<Product> searchProductsByPrice(String price){
+        List<Product> listProduct = new ArrayList<>();
+        try{
+            EntityManager entityManager = DbConnector.getEntityManager();
+            TypedQuery<Product> query = 
+                    entityManager.createNamedQuery("Product.findByPrice", Product.class);
+            query.setParameter("price", "%" + price + "%");
+            listProduct = query.getResultList();
+        } catch (Exception e){
+            System.out.println("searchProductsByPrice Exception: " + e.getMessage());
+        }
+        return listProduct;
     }
 
     public List<Product> getProducts() {
