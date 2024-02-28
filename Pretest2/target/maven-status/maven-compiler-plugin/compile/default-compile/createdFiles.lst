@@ -1,0 +1,8 @@
+com\mytech\pretest2\resources\JakartaEE10Resource.class
+com\mytech\pretest2\daos\StudentDAO.class
+com\mytech\pretest2\helpers\ServletHelper.class
+com\mytech\pretest2\models\Student.class
+com\mytech\pretest2\helpers\Constants.class
+com\mytech\pretest2\db\DbConnector.class
+com\mytech\pretest2\controllers\StudentServlet.class
+com\mytech\pretest2\JakartaRestConfiguration.class

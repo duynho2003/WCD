@@ -20,7 +20,7 @@ public class DbConnector {
     
     //JPA
     @PersistenceUnit
-    private static EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("MVCSHOPDEMO");
+    private static EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("mvcshopdemo");
     
     public static EntityManager getEntityManager(){
         return DbConnector.entityManagerFactory.createEntityManager();
