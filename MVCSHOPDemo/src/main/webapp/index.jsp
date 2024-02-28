@@ -1,8 +1,4 @@
-<%-- 
-    Document   : index
-    Created on : Jan 31, 2024, 2:22:27 PM
-    Author     : trungtruong
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

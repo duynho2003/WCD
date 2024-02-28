@@ -6,7 +6,7 @@ package com.mytech.mvcshopdemo.helpers;
 
 /**
  *
- * @author Admin
+ * @author caova
  */
 public class Constants {
     public static String DEFAULT_FILENAME = "upload_img";

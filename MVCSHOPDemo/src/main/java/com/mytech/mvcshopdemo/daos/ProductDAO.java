@@ -13,15 +13,15 @@ import java.util.List;
 
 /**
  *
- * @author Admin
+ * @author caova
  */
 public class ProductDAO {
-    public List<Productt> getProductts() {
+    public List<Productt> getProducts(){
         List<Productt> listProduct = new ArrayList<>();
-
+        
         try {
             EntityManager entityManager = DbConnector.getEntityManager();
-            Query query = entityManager.createNativeQuery("SELECT * FROM Productts", Productt.class);
+            Query query = entityManager.createNativeQuery("SELECT * FROM Productts",Productt.class);
             listProduct = query.getResultList();
             System.out.println("List Products:");
             for (Productt product : listProduct) {
@@ -29,22 +29,22 @@ public class ProductDAO {
             }
         } catch (Exception e) {
         }
-
+        
         return listProduct;
-    }
-
-    public Productt getProductById(String id) {
+    } 
+    
+    public Productt getProductById(String id){
         Productt product = null;
-
+        
         try {
-            EntityManager entityManager = DbConnector.getEntityManager();
-            product = entityManager.find(Productt.class, id);
+           EntityManager entityManager = DbConnector.getEntityManager();
+           product = entityManager.find(Productt.class, id); 
         } catch (Exception e) {
         }
         return product;
     }
-
-    public void addProduct(Productt product) {
+    
+    public void addProduct(Productt product){
         EntityManager entityManager = DbConnector.getEntityManager();
         try {
             var transaction = entityManager.getTransaction();
@@ -52,13 +52,13 @@ public class ProductDAO {
             entityManager.persist(product);
             transaction.commit();
         } catch (Exception e) {
-
+            
         }
     }
-
+    
     public void updateProduct(Productt product) {
         EntityManager entityManager = DbConnector.getEntityManager();
-        
+
         try {
             var transaction = entityManager.getTransaction();
             transaction.begin();
@@ -74,14 +74,14 @@ public class ProductDAO {
         }
     }
     
-    public void deleteProduct(String id){
-        try{
+    public void deleteProduct(String id){     
+        try {
             EntityManager entityManager = DbConnector.getEntityManager();
             entityManager.getTransaction().begin();
             Productt product = entityManager.find(Productt.class, id);
             entityManager.remove(product);
             entityManager.getTransaction().commit();
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

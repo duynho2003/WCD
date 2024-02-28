@@ -5,11 +5,12 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Products</title>
+        <title>Product Page</title>
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -18,8 +19,9 @@
     </head>
     <body>
         <div class="container">
-            <h1>PRODUCTS MANAGEMENT!</h1>
+            <h1>Product MANAGEMENT!</h1>
             <h2><a href="products/new">New Product</a></h2>
+            
             <table class="table">
                 <tr>
                     <th>ID</th>
@@ -33,10 +35,13 @@
                         <td><c:out value="${product.id}"></c:out></td>
                         <td><c:out value="${product.name}"></c:out></td>
                         <td><c:out value="${product.price}"></c:out></td>
-                        <td><img src="${pageContext.request.contextPath}/${product.image}" width="200" height="300" alt="product image"/></td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/products/edit?id=<c:out value='${product.id}'/>">Edit</a> 
-                            <a href="${pageContext.request.contextPath}/products/delete?id=<c:out value='${product.id}'/>">Delete</a>
+                            
+                            <img src="${pageContext.request.contextPath}/${product.image}" width="200" height="100"/>
+                        </td>
+                            <td>
+                                <a href="${pageContext.request.contextPath}/products/edit?id=<c:out value='${product.id}'/>">Edit</a> 
+                                <a href="${pageContext.request.contextPath}/products/delete?id=<c:out value='${product.id}'/>">Delete</a>
                     </tr>
                 </c:forEach>
             </table>
@@ -46,6 +51,5 @@
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-
     </body>
 </html>

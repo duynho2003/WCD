@@ -11,7 +11,7 @@ import java.io.IOException;
 
 /**
  *
- * @author trungtruong
+ * @author caova
  */
 public class ServletHelper {
     public static void forward(HttpServletRequest request, HttpServletResponse response, String page) throws ServletException, IOException {

@@ -14,7 +14,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Admin
+ * @author caova
  */
 @Entity
 @Table(name = "Productts")
@@ -24,16 +24,16 @@ public class Productt implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
-
-    @Column(name = "name", unique = true, length = 255, nullable = false)
-    private String name;
-
+    
+    @Column(name = "name", unique = true, length = 255,nullable = false)
+    private String name;   
+    
     @Column(name = "price")
     private double price;
-
+    
     @Column(name = "image")
     private String image;
-
+    
     public String getId() {
         return id;
     }
@@ -99,4 +99,5 @@ public class Productt implements Serializable {
     public String toString() {
         return "com.mytech.mvcshopdemo.models.Productt[ id=" + id + " ]";
     }
+    
 }
