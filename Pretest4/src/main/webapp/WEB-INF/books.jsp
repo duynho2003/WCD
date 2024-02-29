@@ -29,10 +29,10 @@
                 </form>
                 <form class="form-inline d-flex" action="${pageContext.request.contextPath}/books/sort" method="get">
                     <input class="form-control mx-2" type="number" name="min" required min="0"
-                           placeholder="Min" aria-label="Search">
-                    <input class="form-control mx-2" type="number" name="max" required
-                           placeholder="Max" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                           placeholder="Price min" aria-label="Search">
+                    <input class="form-control mx-2" type="number" name="max" required min="0" max="10000"
+                           placeholder="Price max" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Filter</button>
                 </form>
             </nav>
             <table class="table">
