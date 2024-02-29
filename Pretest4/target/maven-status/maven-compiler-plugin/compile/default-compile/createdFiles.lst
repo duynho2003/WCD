@@ -1,0 +1,8 @@
+com\mytech\pretest4\controllers\BookServlet.class
+com\mytech\pretest4\daos\BookDAO.class
+com\mytech\pretest4\db\DbConnector.class
+com\mytech\pretest4\resources\JakartaEE10Resource.class
+com\mytech\pretest4\helpers\ServletHelper.class
+com\mytech\pretest4\JakartaRestConfiguration.class
+com\mytech\pretest4\models\Book.class
+com\mytech\pretest4\helpers\Constants.class
