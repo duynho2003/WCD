@@ -22,6 +22,8 @@ import jakarta.persistence.Table;
 @NamedQuery(name = "Product.findByName", query = "SELECT p FROM Product p WHERE p.name LIKE :name")
 @NamedQuery(name = "Product.findByPrice", query = "SELECT p FROM Product p WHERE p.price LIKE :price")
 @NamedQuery(name = "Product.findAll",  query = "SELECT p FROM Product p")
+@NamedQuery(name = "Product.sortByPrice", query = "SELECT p from Product p WHERE p.price between :min and :max")
+
 public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;

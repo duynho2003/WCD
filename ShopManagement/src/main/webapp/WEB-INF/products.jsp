@@ -28,6 +28,13 @@
                            placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
+                <form class="form-inline d-flex" action="${pageContext.request.contextPath}/products/sort" method="get">
+                    <input class="form-control mx-2" type="number" name="min"
+                           placeholder="Min" aria-label="Search">
+                    <input class="form-control mx-2" type="number" name="max"
+                           placeholder="Max" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
             </nav>
             <table class="table">
                 <tr>

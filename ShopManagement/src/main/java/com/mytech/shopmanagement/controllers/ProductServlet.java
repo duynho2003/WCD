@@ -23,7 +23,7 @@ import java.util.List;
  *
  * @author trungtruong
  */
-@WebServlet(name = "ProductServlet", urlPatterns = { "/products/*" })
+@WebServlet(name = "ProductServlet", urlPatterns = {"/products/*"})
 @MultipartConfig(fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 5)
 public class ProductServlet extends HttpServlet {
 
@@ -67,9 +67,11 @@ public class ProductServlet extends HttpServlet {
             request.setAttribute("listProducts", listProducts);
             ServletHelper.forward(request, response, "products");
             return;
-        } else if (action != null && action.contains("/search")) {
-            String searchText = request.getParameter("searchText");
-            List<Product> listProducts = productDao.searchProductsByPrice(searchText);
+        } else if (action != null && action.contains("/sort")) {
+            String min = request.getParameter("min");
+            String max = request.getParameter("max");
+            List<Product> listProducts = productDao.getProductByPrice(Double.parseDouble(min), Double.parseDouble(max));
+            System.out.println(">>>length list: ");
             request.setAttribute("listProducts", listProducts);
             ServletHelper.forward(request, response, "products");
             return;
