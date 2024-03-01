@@ -1,0 +1,8 @@
+com\mytech\exam\daos\BookDAO.class
+com\mytech\exam\db\DbConnector.class
+com\mytech\exam\helpers\Constants.class
+com\mytech\exam\resources\JakartaEE10Resource.class
+com\mytech\exam\models\Book.class
+com\mytech\exam\controllers\BookServlet.class
+com\mytech\exam\helpers\ServletHelper.class
+com\mytech\exam\JakartaRestConfiguration.class
